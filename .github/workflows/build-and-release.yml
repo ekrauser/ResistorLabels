@@ -23,7 +23,7 @@ jobs:
         run: |
           $current_version = Get-Content version.txt
           Write-Output "Current version: $current_version"
-          $base_version = $current_version -replace 'v', ''
+          $base_version = [double]($current_version -replace 'v', '')
           $new_version = 'v' + ([math]::Round(($base_version + 0.01), 2).ToString("F2"))
           Write-Output "New version: $new_version"
           Set-Content version.txt $new_version
