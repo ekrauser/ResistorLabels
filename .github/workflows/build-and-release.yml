@@ -19,14 +19,15 @@ jobs:
       # Step 2: Read and Increment Version
       - name: Read and Increment Version
         id: versioning
+        shell: pwsh
         run: |
-          current_version=$(cat version.txt)
-          echo "Current version: $current_version"
-          base_version=${current_version//v/} # Remove the 'v' prefix
-          new_version=$(echo "$base_version + 0.01" | bc | xargs printf "v%.2f")
-          echo "New version: $new_version"
-          echo "$new_version" > version.txt
-          echo "new_version=$new_version" >> $GITHUB_ENV
+          $current_version = Get-Content version.txt
+          Write-Output "Current version: $current_version"
+          $base_version = $current_version -replace 'v', ''
+          $new_version = 'v' + ([math]::Round(($base_version + 0.01), 2).ToString("F2"))
+          Write-Output "New version: $new_version"
+          Set-Content version.txt $new_version
+          echo "new_version=$new_version" >> $env:GITHUB_ENV
 
       # Step 3: Commit Updated Version
       - name: Commit Updated Version
