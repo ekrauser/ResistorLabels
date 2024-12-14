@@ -1,6 +1,12 @@
-[
-    {"values": [100, 220, 330], "tolerance": 5},
-    {"values": [470, 560, 680], "tolerance": 1},
-    {"values": [820, 1000, 1200], "tolerance": 2},
-    {"values": [1500, 1800, 2200], "tolerance": null}
-]
+{
+    "options": {
+        "draw_both_sides": true,
+        "draw_center_line": true,
+        "draw_outlines": false
+    },
+    "resistors": [
+        {"values": [100, 120, 150], "tolerance": 5},
+        {"values": [220, 330, 470], "tolerance": 1},
+        {"values": [560, 680, 820], "tolerance": 2}
+    ]
+}

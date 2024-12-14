@@ -683,7 +683,7 @@ def generate_values(
 
 
 def main() -> None:
-    # Load resistor values and tolerances from a file
+    # Load resistor values, tolerances, and options from a file
     try:
         with open("resistor_values.json", "r") as file:
             data = json.load(file)
@@ -694,11 +694,17 @@ def main() -> None:
         print("Error: Failed to decode JSON. Please check the file format.")
         return
 
+    # Parse global options
+    options = data.get("options", {})
+    draw_both_sides = options.get("draw_both_sides", False)
+    draw_center_line = options.get("draw_center_line", True)
+    draw_outlines = options.get("draw_outlines", False)
+
     # Parse resistor values and tolerances
     resistor_values: ResistorList = []
     tolerance_values = []
 
-    for entry in data:
+    for entry in data.get("resistors", []):
         resistor_values.append(entry.get("values", []))
         tolerance_values.append(entry.get("tolerance"))
 
@@ -708,25 +714,6 @@ def main() -> None:
     layout = AVERY_5260
     # layout = AVERY_L7157
     # layout = EJ_RANGE_24
-
-    # ############################################################################
-    # Further configuration options
-    #
-    # Change the following options as you desire.
-    # ############################################################################
-
-    # Enables drawing the resistor values on the other side of the sticker fold line
-    # as well, so that the finished resistor plastic bags are labeled on both sides.
-    draw_both_sides = True
-
-    # Draws the line where the stickers should be folded.
-    # Disable this if you don't like the line.
-    draw_center_line = True
-
-    # Draw the outlines of the stickers.
-    # This is primarily a debugging option and should most likely not be enabled
-    # for the actual printing.
-    draw_outlines = False
 
     # ############################################################################
     # PDF generation
