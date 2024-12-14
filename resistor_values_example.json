@@ -1,0 +1,6 @@
+[
+    {"values": [100, 220, 330], "tolerance": 5},
+    {"values": [470, 560, 680], "tolerance": 1},
+    {"values": [820, 1000, 1200], "tolerance": 2},
+    {"values": [1500, 1800, 2200], "tolerance": null}
+]
