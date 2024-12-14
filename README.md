@@ -15,7 +15,7 @@ The generated labels include:
 -   3- and 4-digit smd codes
 -   EIA-96 smd code
 
-<img src="images\Example.svg">
+<img src="Example.svg">
 
 # Usage
 
