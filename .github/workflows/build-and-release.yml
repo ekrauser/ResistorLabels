@@ -63,7 +63,6 @@ jobs:
           mv dist/resistalabel.exe release/
           cp resistor_values.json release/
           cp resistor_values_example.json release/
-          cp Roboto-Bold.ttf release/
           cd release
           powershell -Command "Compress-Archive -Path * -DestinationPath ../resistalabel.zip"
 
