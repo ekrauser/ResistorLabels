@@ -19,20 +19,7 @@ The generated labels include:
 
 # Usage
 
--   Install python3
--   Install the python3 library `reportlab`. This library is used to do the actual PDF generation.
--   Add your own required resistor values in `main()` of `LabelGenerator.py`.
--   If using Avery L7157, change the `layout` value in `main()` to `AVERY_L7157`.
--   Run the script `LabelGenerator.py`!
-
-It will now generate a `ResistorLabels.pdf` that can be used to print onto AVERY 5260/L7157.
-
-For all the non-programmers, there are also pre-generated versions with all
-common resistor values for [Avery 5260](./CommonValuesAvery5260.pdf) and [Avery L7157](./CommonValuesAveryL7157.pdf).
-
-# Troubleshoot
-
--	if label comes out misagliend like this: <img src="images\misaligned.jpg">, follow below steps to troubleshoot
+change up the example json to the values and settings you want then run the exe, the script will generate a `ResistorLabels.pdf` that can be used to print onto AVERY 5260/L7157.
 
 # More Details
 
