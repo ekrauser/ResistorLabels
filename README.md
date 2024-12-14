@@ -1,3 +1,7 @@
+# forked from Finomnis/ResistorLabels
+
+Changed it up a bit to read the values in from a json file
+
 # ResistorLabels
 
 This script generates labels for resistor zip bags.
