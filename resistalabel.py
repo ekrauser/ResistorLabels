@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+#Made a few changes to pull values and settings from a json
+
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.lib.pagesizes import A4, LETTER
 from reportlab.lib.units import inch, mm
